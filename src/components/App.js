@@ -25,7 +25,7 @@ const App = () => {
       </nav>
 
       <Routes>
-        <Route index element={<Home />} />
+       
         <Route path="/" element={<Home />} />
 
         <Route path="/women" element={<Women />}>

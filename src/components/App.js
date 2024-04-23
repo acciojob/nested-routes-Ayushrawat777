@@ -19,20 +19,20 @@ const App = () => {
     <Router>
       <h1>React Router</h1>
 
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/women">User</NavLink>
-      </nav>
+      <ul>
+      <li> <NavLink to="/">Home</NavLink></li> 
+      <li> <NavLink to="/women">Women</NavLink></li> 
+      </ul>
 
       <Routes>
-       
+      
         <Route path="/" element={<Home />} />
 
         <Route path="/women" element={<Women />}>
-          <Route path="grooming" element={<Grooming />} />
-          <Route path="shirt" element={<Shirt />} />
-          <Route path="trouser" element={<Trouser />} />
-          <Route path="jewellery" element={<Jewellery />} />
+          <Route path="Grooming" element={<Grooming />} />
+          <Route path="Shirt" element={<Shirt />} />
+          <Route path="Trouser" element={<Trouser />} />
+          <Route path="Jewellery" element={<Jewellery />} />
         </Route>
       </Routes>
     </Router>

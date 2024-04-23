@@ -8,18 +8,18 @@ const Women = () => {
       <ul>
         <li>
           {" "}
-          <NavLink to="grooming">Grooming</NavLink>
+          <NavLink to="Grooming">Grooming</NavLink>
         </li>
         <li>
           {" "}
-          <NavLink to="shirt">Shirt</NavLink>
+          <NavLink to="Shirt">Shirt</NavLink>
         </li>
         <li>
           {" "}
-          <NavLink to="trouser">Trouser</NavLink>
+          <NavLink to="Trouser">Trouser</NavLink>
         </li>
         <li>
-          <NavLink to="jewellery">Jewellery</NavLink>
+          <NavLink to="Jewellery">Jewellery</NavLink>
         </li>
       </ul>
       <Outlet />

@@ -1,42 +1,54 @@
+
 import React from "react";
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
-
-import Home from "./Home";
-import Women from "./Women";
-import Grooming from "./Grooming";
-import Shirt from "./Shirt";
-import Trouser from "./Trouser";
-import Jewellery from "./Jewellery";
+import './../styles/App.css';
+import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    <Router>
-      <h1>React Router</h1>
+    <main>
+      <div>
+        <BrowserRouter>
+          <nav>
+            <ul>
+              <li><Link to={'/'}>Home</Link></li>
+              <li><Link to={'/women'}>Women</Link></li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/women" element={<Women />}>
+              <Route path="Grooming" element={<p>Grooming</p>} />
+              <Route path="Shirt" element={<p>Shirt</p>} />
+              <Route path="Trouser" element={<p>Trouser</p>} />
+              <Route path="Jewellery" element={<p>Jewellery</p>} />
+            </Route>
+            <Route path="*" element={<p>Page not Found</p>} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </main>
+  )
+}
 
+export default App
+
+function Home() {
+  return <p>Index</p>
+}
+
+function Women() {
+  return (
+
+    <div>
+      <p>Women Items:</p>
       <ul>
-      <li> <NavLink to="/">Home</NavLink></li> 
-      <li> <NavLink to="/women">Women</NavLink></li> 
+        <li><Link to={'/women/Grooming'}>Grooming</Link></li>
+        <li><Link to={'/women/Shirt'}>Shirt</Link></li>
+        <li><Link to={'/women/Trouser'}>Trouser</Link></li>
+        <li><Link to={'/women/Jewellery'}>Jewellery</Link></li>
+        <Outlet />
       </ul>
+    </div>
 
-      <Routes>
-      
-        <Route path="/" element={<Home />} />
-
-        <Route path="/women" element={<Women />}>
-          <Route path="Grooming" element={<Grooming />} />
-          <Route path="Shirt" element={<Shirt />} />
-          <Route path="Trouser" element={<Trouser />} />
-          <Route path="Jewellery" element={<Jewellery />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+  )
+}
